@@ -10,11 +10,7 @@ import firebaseConfig from './firebaseConfig'
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const settings = {timestampsInSnapshots: true};
-  db.settings(settings);
-
-
-
-
+db.settings(settings);
 
 class App extends Component {
   constructor(props){
@@ -54,7 +50,6 @@ class App extends Component {
 
   render() {
     if (this.state.mediaArray) {
-
 
     return (
       <div className={styles.appContainer}>
