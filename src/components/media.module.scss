@@ -1,0 +1,16 @@
+.imageMedia img {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.imageMedia {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.mediaContainer {
+  padding: 10px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}

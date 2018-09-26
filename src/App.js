@@ -18,7 +18,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      mediaArray: []
+      mediaArray: null
     }
   }
 
@@ -35,7 +35,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.mediaArray);
+    if (this.state.mediaArray) {
+
+
     return (
       <div className={styles.appContainer}>
         <div className={styles.titleNavContainer}>
@@ -43,10 +45,17 @@ class App extends Component {
           <Nav/>
         </div>
         <div className={styles.projectsWrapper}>
-          <Projects/>
+          <Projects
+            appMediaArray={this.state.mediaArray}
+          />
         </div>
       </div>
     );
+  } else {
+    return (
+      <p>loading...</p>
+    )
+  }
   }
 }
 
