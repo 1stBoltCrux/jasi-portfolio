@@ -1,4 +1,13 @@
 .appContainer {
   display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.appMainContent {
+  display: flex;
+}
+
+.titleNavContainer {
+  padding: 20px;
 }

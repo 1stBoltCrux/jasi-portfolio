@@ -9,8 +9,9 @@
 }
 
 .mediaContainer {
-  padding: 10px;
+  display: block;
+  margin: auto;
+  padding: 5px;
   min-width: 200px;
-  display: flex;
-  flex-direction: column;
+
 }
