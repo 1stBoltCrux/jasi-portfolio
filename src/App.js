@@ -17,9 +17,28 @@ class App extends Component {
     super(props)
     this.state = {
       mediaArray: null,
-      chosenGallery: 'film'
+      chosenGallery: 'film',
+      windowSize: window.innerWidth
     }
   }
+
+
+    componentDidMount(){
+      this.chooseGallery()
+      window.addEventListener('resize', this.handleSize)
+    }
+
+    componentWillUnmount(){
+      window.removeEventListener('resize', this.handleSize)
+    }
+
+  handleSize = () => {
+    console.log(window.innerWidth);
+    this.setState({
+      windowSize: window.innerWidth
+    })
+  }
+
 
   handleSelect = (selected) => {
     console.log(selected);
@@ -29,10 +48,6 @@ class App extends Component {
     setTimeout(()=>{
       this.chooseGallery()
     }, 10)
-  }
-
-  componentDidMount(){
-    this.chooseGallery()
   }
 
   chooseGallery = () => {
@@ -49,14 +64,14 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.mediaArray) {
+    if (this.state.mediaArray && this.state.windowSize > 350) {
 
     return (
       <div className={styles.appContainer}>
         <Social></Social>
         <div  className={styles.appMainContent}>
           <div className={styles.titleNavContainer}>
-            <Title/>
+            <Title windowSize={this.state.windowSize}/>
             <Nav
               onHandleSelect={this.handleSelect}
             />
@@ -69,7 +84,28 @@ class App extends Component {
         </div>
       </div>
     );
-  } else {
+  } else if (this.state.windowSize < 360 && this.state.mediaArray) {
+    return (
+      <div className={styles.appContainer}>
+        <Social></Social>
+          <Title windowSize={this.state.windowSize}/>
+        <Nav
+          onHandleSelect={this.handleSelect}
+        />
+        <div  className={styles.appMainContent}>
+          <div className={styles.titleNavContainer}>
+
+
+          </div>
+          <div className={styles.projectsWrapper}>
+            <Projects
+              appMediaArray={this.state.mediaArray}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  } else if (!this.state.mediaArray){
     return (
       <p>loading...</p>
     )
