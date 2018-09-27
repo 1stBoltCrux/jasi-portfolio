@@ -68,13 +68,13 @@ class App extends Component {
 
     return (
       <div className={styles.appContainer}>
-        <Social></Social>
         <div  className={styles.appMainContent}>
           <div className={styles.titleNavContainer}>
             <Title windowSize={this.state.windowSize}/>
             <Nav
               onHandleSelect={this.handleSelect}
             />
+            <Social/>
           </div>
           <div className={styles.projectsWrapper}>
             <Projects

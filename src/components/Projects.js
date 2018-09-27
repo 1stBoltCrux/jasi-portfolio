@@ -10,7 +10,9 @@ const Projects = (props) => {
   return (
     <div className={styles.projectsContainer}>
       <div className={styles.masonryContainer}>
-        <Masonry>
+        <Masonry
+          style={{margin: 'auto'}}
+          options={{fitWidth: 'true'}}>
           {props.appMediaArray.map(mediaItem =>
             <Media
               title={mediaItem.title}

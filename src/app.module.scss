@@ -2,10 +2,16 @@ p {
   margin: 0;
 }
 
+body {
+  margin: auto;
+}
+
 .appContainer {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin:auto;
 }
 
 .appMainContent {
@@ -15,6 +21,8 @@ p {
 
 .titleNavContainer {
   padding: 20px;
+  margin-left: 40px;
+  width: 100%;
 }
 
 .mobileNavTitleContainer {
