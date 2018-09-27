@@ -10,18 +10,21 @@ class Media extends Component {
       image: React.createRef(),
       width: '',
       height: '',
-      bottom: ''
+      bottom: '',
+      hoveredLayer: 'none'
     }
   }
 
   componentDidMount(){
-    // setTimeout(()=> {
-    //   console.log(this.state.imageSize.offsetWidth);
-    // }, 2000)
+
     }
 
-    componentDidUpdate(){
-      // console.log(this.state.imageSize.offsetWidth);
+    handleImageSize = () => {
+      this.setState({
+        width: this.state.image.offsetWidth,
+        height: this.state.image.offsetHeight,
+        bottom: this.state.image.offsetHeight
+      })
     }
 
   handleModal = () => {
@@ -30,11 +33,12 @@ class Media extends Component {
     })
   }
 
+  handleMouseEnter = () => {
+    console.log(this.state.height);
+
+  }
+
   render(){
-    let display =  'none'
-    if (this.state.height) {
-      display =  'block'
-    }
     let modal;
 
     if (this.state.modal) {
@@ -43,20 +47,13 @@ class Media extends Component {
 
     return (
       <div onClick={()=> this.handleModal()} className={styles.mediaContainer}>
+        {modal}
         <div className={styles.imageMedia}>
           <img
-            onMouseEnter={()=> this.setState({
-            width: this.state.image.offsetWidth,
-            height: this.state.image.offsetHeight,
-            bottom: this.state.image.offsetHeight
-          })} ref={(ref) => this.state.image = ref} src={this.props.url}/>
+              onLoad={()=> this.handleImageSize()}
+             ref={(ref) => this.state.image = ref} src={this.props.url}/>
         </div>
-        {modal}
-        <div onMouseLeave={()=> this.setState({
-          width: '',
-          height: '',
-          bottom: ''
-        })} style={{width: this.state.width, height: this.state.height, bottom: this.state.bottom + 5, display: display}} className={styles.hoveredLayer}>
+        <div onMouseEnter={()=> this.handleMouseEnter()} style={{width: this.state.width, height: this.state.height, bottom: this.state.bottom + 5}} className={styles.hoveredLayer}>
         </div>
       </div>
     )
