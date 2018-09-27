@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './media.module.scss';
 import DetailModal from './DetailModal'
+import view from './assets/view.png'
 
 class Media extends Component {
   constructor(props){
@@ -54,7 +55,7 @@ class Media extends Component {
              ref={(ref) => this.state.image = ref} src={this.props.url}/>
         </div>
         <div onMouseEnter={()=> this.handleMouseEnter()} style={{width: this.state.width, height: this.state.height, bottom: this.state.bottom}} className={styles.hoveredLayer}>
-          <p>Click me!</p>
+          <img src={view}/>
         </div>
       </div>
     )
