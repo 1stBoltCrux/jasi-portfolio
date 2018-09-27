@@ -64,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.mediaArray && this.state.windowSize > 350) {
+    if (this.state.mediaArray && this.state.windowSize > 600) {
 
     return (
       <div className={styles.appContainer}>
@@ -84,25 +84,23 @@ class App extends Component {
         </div>
       </div>
     );
-  } else if (this.state.windowSize < 360 && this.state.mediaArray) {
+  } else if (this.state.windowSize <= 600 && this.state.mediaArray) {
     return (
       <div className={styles.appContainer}>
-        <Social></Social>
-          <Title windowSize={this.state.windowSize}/>
-        <Nav
-          onHandleSelect={this.handleSelect}
-        />
+        <div className={styles.mobileNavTitleContainer}>
+          <Title/>
+          <Nav onHandleSelect={this.handleSelect}/>
+        </div>
         <div  className={styles.appMainContent}>
-          <div className={styles.titleNavContainer}>
-
-
-          </div>
           <div className={styles.projectsWrapper}>
             <Projects
+              windowSize={this.state.windowSize}
               appMediaArray={this.state.mediaArray}
             />
           </div>
+
         </div>
+                  <Social></Social>
       </div>
     )
   } else if (!this.state.mediaArray){
