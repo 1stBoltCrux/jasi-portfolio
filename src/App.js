@@ -71,9 +71,11 @@ class App extends Component {
         <div  className={styles.appMainContent}>
           <div className={styles.titleNavContainer}>
             <Title windowSize={this.state.windowSize}/>
-            <Nav
-              onHandleSelect={this.handleSelect}
-            />
+            <div style={{marginBottom: 40}}>
+              <Nav
+                onHandleSelect={this.handleSelect}
+              />
+            </div>
             <Social/>
           </div>
           <div className={styles.projectsWrapper}>
@@ -93,14 +95,16 @@ class App extends Component {
         </div>
         <div  className={styles.appMainContent}>
           <div className={styles.projectsWrapper}>
-            <Projects
-              windowSize={this.state.windowSize}
-              appMediaArray={this.state.mediaArray}
-            />
+              <Projects
+                windowSize={this.state.windowSize}
+                appMediaArray={this.state.mediaArray}
+              />
           </div>
 
         </div>
-                  <Social></Social>
+      <Social
+        windowSize={{justifyContent: 'center'}}
+      />
       </div>
     )
   } else if (!this.state.mediaArray){
