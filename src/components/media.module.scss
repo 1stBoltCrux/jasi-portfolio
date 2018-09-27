@@ -22,16 +22,37 @@
 }
 
 .hoveredLayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   display: none;
   background-color: rgba(0, 0, 0, 0.7);
   position: relative;
-  z-index: 3;
+  z-index: 1;
+  animation: fadeIn 1s ease;
 }
 
 .imageMedia:hover + .hoveredLayer {
-  display: block;
+  display: flex;
+
 }
 
 .hoveredLayer:hover {
-  display: block;
+  display: flex;
+  cursor: pointer;
+
+}
+
+.mediaContainer p {
+  color: white;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

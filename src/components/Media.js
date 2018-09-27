@@ -53,7 +53,8 @@ class Media extends Component {
               onLoad={()=> this.handleImageSize()}
              ref={(ref) => this.state.image = ref} src={this.props.url}/>
         </div>
-        <div onMouseEnter={()=> this.handleMouseEnter()} style={{width: this.state.width, height: this.state.height, bottom: this.state.bottom + 5}} className={styles.hoveredLayer}>
+        <div onMouseEnter={()=> this.handleMouseEnter()} style={{width: this.state.width, height: this.state.height, bottom: this.state.bottom + 4}} className={styles.hoveredLayer}>
+          <p>Click to Open the image bitch</p>
         </div>
       </div>
     )
