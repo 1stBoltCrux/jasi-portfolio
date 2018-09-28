@@ -19,13 +19,13 @@ body {
 
 .appMainContent {
   display: flex;
-  justify-content: center;
+  margin: auto;
 }
 
 .titleNavContainer {
   padding: 20px;
-  margin: 20px 0px 0px 40px;
-  width: 100%;
+  margin: 10px 0px 0px 30px;
+  min-width: 200px;
 }
 
 .mobileNavTitleContainer {

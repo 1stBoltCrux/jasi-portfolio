@@ -22,7 +22,6 @@ class App extends Component {
     }
   }
 
-
     componentDidMount(){
       this.chooseGallery()
       window.addEventListener('resize', this.handleSize)
@@ -64,8 +63,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.mediaArray && this.state.windowSize > 600) {
-
+    if (this.state.mediaArray && this.state.windowSize > 768) {
     return (
       <div className={styles.appContainer}>
         <div  className={styles.appMainContent}>
@@ -80,13 +78,14 @@ class App extends Component {
           </div>
           <div className={styles.projectsWrapper}>
             <Projects
+              windowSize={this.state.windowSize}
               appMediaArray={this.state.mediaArray}
             />
           </div>
         </div>
       </div>
     );
-  } else if (this.state.windowSize <= 600 && this.state.mediaArray) {
+  } else if (this.state.windowSize <= 768 && this.state.mediaArray) {
     return (
       <div className={styles.appContainer}>
         <div className={styles.mobileNavTitleContainer}>

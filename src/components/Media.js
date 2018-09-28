@@ -47,9 +47,11 @@ class Media extends Component {
     }
 
     return (
-      <div onClick={()=> this.handleModal()} className={styles.mediaContainer}>
+      <div
+        style={{height: this.state.height, minWidth: this.state.width}}
+        onClick={()=> this.handleModal()} className={styles.mediaContainer}>
         {modal}
-        <div className={styles.imageMedia} style={{height: this.state.height}}>
+        <div className={styles.imageMedia} style={{height: this.state.height, width: this.state.width}}>
           <img
               onLoad={()=> this.handleImageSize()}
              ref={(ref) => this.state.image = ref} src={this.props.url}/>
