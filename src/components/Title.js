@@ -5,6 +5,7 @@ const Title = () => {
   return(
     <div className={styles.titleContainer}>
       <h1>Jasibe Cure-Twede</h1>
+      <p>- - - - - - - - - - - - - - - - - - - -</p>
     </div>
   )
 }

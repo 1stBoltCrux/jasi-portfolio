@@ -8,7 +8,6 @@ class Projects extends Component  {
     super(props)
   }
   render(){
-    console.log(this.props);
     if (this.props.windowSize > 600) {
       return (
         <div className={styles.projectsContainer}>

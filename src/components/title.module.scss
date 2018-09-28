@@ -1,4 +1,11 @@
 .titleContainer {
+  display: flex;
+  flex-direction: column;
   font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5rem;
   margin-bottom: 20px;
+}
+
+.titleContainer p {
+  align-self: center;
 }

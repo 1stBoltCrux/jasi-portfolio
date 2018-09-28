@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import Projects from './components/Projects';
 import Social from './components/Social'
 import firebaseConfig from './firebaseConfig'
+import spinner from './components/assets/spinner.png'
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
@@ -68,13 +69,15 @@ class App extends Component {
       <div className={styles.appContainer}>
         <div  className={styles.appMainContent}>
           <div className={styles.titleNavContainer}>
-            <Title windowSize={this.state.windowSize}/>
-            <div style={{marginBottom: 40}}>
-              <Nav
-                onHandleSelect={this.handleSelect}
-              />
+            <div className={styles.innerTitleNavContainer}>
+              <Title windowSize={this.state.windowSize}/>
+              <div style={{marginBottom: 40}}>
+                <Nav
+                  onHandleSelect={this.handleSelect}
+                />
+              </div>
+              <Social/>
             </div>
-            <Social/>
           </div>
           <div className={styles.projectsWrapper}>
             <Projects
@@ -108,7 +111,9 @@ class App extends Component {
     )
   } else if (!this.state.mediaArray){
     return (
-      <p>loading...</p>
+      <div className={styles.spinnerContainer}>
+        <img src={spinner}/>
+      </div>
     )
   }
   }

@@ -8,6 +8,7 @@ h1, h3 {
 
 body {
   margin: auto;
+  background-image: url('./components/assets/scratch.jpg')
 }
 
 .appContainer {
@@ -15,6 +16,7 @@ body {
   flex-direction: column;
   width: 100%;
   margin:auto;
+
 }
 
 .appMainContent {
@@ -23,9 +25,17 @@ body {
 }
 
 .titleNavContainer {
-  padding: 15px;
+  padding: 0 20px 20px 20px;
   margin: 0px 0px 0px 30px;
   min-width: 200px;
+  background-image: linear-gradient(rgba(0,0,0,.05), transparent,rgba(0,0,0,0.2));
+  box-sizing: border-box;
+  height: 100vh;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.05)
+}
+
+.innerTitleNavContainer {
+  margin-top: 40px;
 }
 
 .mobileNavTitleContainer {
@@ -35,4 +45,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  animation: rotation 1.5s infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
