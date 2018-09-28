@@ -1,6 +1,7 @@
 
 
 .projectsContainer {
+  margin: auto;
   min-width: 320px;
   width: 60vw;
   padding: 20px;
@@ -9,10 +10,12 @@
 
 .masonryContainer {
   margin: 0 auto;
+  min-width: 320px;
   width: 100%;
 }
 
 .mobileFlex {
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
